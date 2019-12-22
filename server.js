@@ -1,4 +1,8 @@
 const express = require('express')
+const config = require('config');
+const mongoose = require('mongoose');
+const profile = require('./Routes/api/profile.js');
+const workouts = require('Routes/api/workouts');
 
 const app = express();
 
@@ -14,8 +18,10 @@ mongooose
     .then(() => console.log('MongoDB Connected...'))
     .catch(err => console.log(err));
 
-app.use('/api/profile', require('./Routes/api/profile'));
-app.use('api/workouts', require('./Routes/api/workouts'))
+app.use('/api/profile', require('./Routes/profile.js'));
+app.use('api/workouts', require('./Routes/workouts'));
+app.use('api/signup', require('./Routes/signup'))
+
 
 const port = process.env.PORT || 4444;
 
