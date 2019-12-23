@@ -1,8 +1,8 @@
 const express = require('express')
 const config = require('config');
 const mongoose = require('mongoose');
-const profile = require('./Routes/api/profile.js');
-const workouts = require('Routes/api/workouts');
+// const profile = require('./Routes/api/profile.js');
+const workouts = require('./Routes/workouts');
 
 const app = express();
 
